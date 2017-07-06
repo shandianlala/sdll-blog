@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 						http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 						http://www.springframework.org/schema/context
+ 						http://www.springframework.org/schema/context/spring-context-3.2.xsd
+ 						http://www.springframework.org/schema/mvc
+ 						http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+	<!-- 配置静态资源信息 -->
+	<mvc:resources location="/resource/" mapping="/resource/**"/>
+	
+	<!-- 配置扫描Controler的路径 -->
+	<context:component-scan base-package="com.sdll.*">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>
+
+	
+	<!-- 配置解析器,默认使用ISO-8859-1字符集,需要设置在 annotation-driven之前,用来修改ContextType中的字符集,设置在annotation-driven之后则无法生效-->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="stringMessageConvert" />
+				<ref bean="jacksonMessageConvert" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 
+		启动 DefaultAnnotationHandlerMapping ,  AnnotationMethodHandlerAdapter
+		Spring 3.1之后,由 RequestMappingHandlerMapping , RequestMappingHandlerAdapter替代
+		RequestMappingHandlerMapping 解析RequestMaping注解,放入map当中
+		RequestMappingHandlerAdapter 适配器来执行我们自己编写的Controller
+	 -->
+	<mvc:annotation-driven/>
+	
+	
+	<!-- 视图解析器  bean的ID和 DispatcherServlet中的名称一致 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix"  value="/WEB-INF/page/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- 配置Spring文件上传 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	 	<property name="defaultEncoding" value="UTF-8"></property>
+	 	<property name="maxUploadSize" value="-1"></property> <!-- 单位字节 1024*1024*10 10MB -->
+	 	<property name="maxInMemorySize" value="20480"></property> <!-- 在内存中的最大大小 -->
+	 	<property name="resolveLazily" value="true"></property>
+	 </bean>
+	 
+	 
+	 <!-- 对RequestParam,ResponseBody注解 解析JSON格式数据的转换器  -->
+	 <bean id="jacksonMessageConvert" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	 		<property name="supportedMediaTypes">
+	 			<list>
+	 				<value>text/html;charset=utf-8</value> <!-- IE FireFox -->
+	 				<value>application/json;charset=utf-8</value> <!-- Chrome -->
+	 			</list>
+	 		</property>
+	 </bean>
+	 
+	 
+	  <!-- 对RequestParam,ResponseBody注解 解析字符数据的转换器  -->
+	 <bean id="stringMessageConvert" class="org.springframework.http.converter.StringHttpMessageConverter">
+	 	<property name="supportedMediaTypes">
+	 			<list>
+	 				<value>text/html;charset=utf-8</value>
+	 			</list>
+	 		</property>
+	 </bean>
+<!-- 	 
+	 <mvc:interceptors>
+	 	<mvc:interceptor>
+	 		<mvc:mapping path="/**"/>
+	 		<mvc:exclude-mapping path="/resources/**"/>
+	 		<mvc:exclude-mapping path="/"/>
+	 		<mvc:exclude-mapping path="/doLogin"/>
+	 		<mvc:exclude-mapping path="/logout"/>
+	 		<bean class="com.eshore.sh.interceptor.LoginInterceptor"></bean>
+	 	</mvc:interceptor>
+	 </mvc:interceptors>
+	  -->
+</beans>
