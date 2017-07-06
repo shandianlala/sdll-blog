@@ -1,4 +1,4 @@
-/*package com.sdll.antnote.vo;
+package com.sdll.blog.vo;
 
 import java.io.Serializable;
 import java.util.List;
@@ -37,4 +37,3 @@ public class ExecResult implements Serializable {
 	
 	
 }
-*/

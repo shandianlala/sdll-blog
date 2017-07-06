@@ -1,15 +1,15 @@
-/*package com.sdll.antnote.controller;
+package com.sdll.blog.controller;
 
-import com.sdll.antnote.service.IUserService;
+import com.sdll.blog.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sdll.antnote.vo.ExecResult;
-import com.sdll.antnote.pojo.User;
-import com.sdll.antnote.service.IUserService;
+import com.sdll.blog.vo.ExecResult;
+import com.sdll.blog.pojo.User;
+import com.sdll.blog.service.IUserService;
 
 @Controller
 public class MainController {
@@ -91,4 +91,3 @@ public class MainController {
 	
 
 }
-*/

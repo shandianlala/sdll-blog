@@ -1,12 +1,12 @@
-/*package com.sdll.antnote.service;
+package com.sdll.blog.service;
 
-import com.sdll.antnote.pojo.User;
+import com.sdll.blog.pojo.User;
 
 import java.util.List;
 
-*//**
+/**
  * Created by Administrator on 2017/5/6.
- *//*
+ */
 public interface IUserService {
 
      User userLogin(String userAccount);
@@ -14,4 +14,3 @@ public interface IUserService {
 //    List<User> listUser();
 
 }
-*/

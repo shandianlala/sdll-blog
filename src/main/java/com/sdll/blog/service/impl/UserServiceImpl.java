@@ -1,17 +1,17 @@
-/*package com.sdll.antnote.service.impl;
+package com.sdll.blog.service.impl;
 
-import com.sdll.antnote.dao.UserMapper;
-import com.sdll.antnote.pojo.User;
-import com.sdll.antnote.service.IUserService;
+import com.sdll.blog.dao.UserMapper;
+import com.sdll.blog.pojo.User;
+import com.sdll.blog.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 
-*//**
+/**
  * Created by Administrator on 2017/5/6.
- *//*
+ */
 
 @Service
 @Transactional
@@ -27,4 +27,3 @@ public class UserServiceImpl implements IUserService,Serializable {
         return user;
     }
 }
-*/

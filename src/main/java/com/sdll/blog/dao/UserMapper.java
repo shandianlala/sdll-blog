@@ -1,8 +1,8 @@
-/*package com.sdll.antnote.dao;
+package com.sdll.blog.dao;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.sdll.antnote.pojo.User;
+import com.sdll.blog.pojo.User;
 
 public interface UserMapper {
 	
@@ -19,4 +19,4 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
-}*/
+}

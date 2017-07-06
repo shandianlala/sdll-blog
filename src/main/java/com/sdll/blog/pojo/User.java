@@ -1,4 +1,4 @@
-/*package com.sdll.antnote.pojo;
+package com.sdll.blog.pojo;
 
 public class User {
     private String userId;
@@ -89,4 +89,4 @@ public class User {
 	}
 	
 	
-}*/
+}
