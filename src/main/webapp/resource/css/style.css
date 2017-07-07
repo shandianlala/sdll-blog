@@ -1,0 +1,17 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	width：100%;
+	height:100%;
+}
+
+#indexhome{
+	width:40%;
+	height:40%;
+	background-color:#c0c0c0;
+	opacity: 0.2;
+	position: absolute;
+    left: 30%;
+    top: 30%;
+	border-radius: 15px;
+}

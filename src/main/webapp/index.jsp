@@ -3,14 +3,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%-- <%@taglib uri="/com.eshore.InitDataTag" prefix="i"%> --%>
 <c:set var="basePath" value="${pageContext.request.contextPath}"/>
 <script>
 var basePath='${basePath}';
 </script>
 <html>
-<body>
-<h2>Hello World!</h2>
-<a href="${basePath }/toNote">toNote</a>
+<head>
+	<title>闪电拉拉的个人网站</title>
+	<link href="${basePath }/resource/css/style.css" rel="stylesheet">
+</head>
+<body style="background-image: url(${basePath }/resource/image/72270.jpg); background-size:cover;background-repeat: no-repeat;">
+	<div id="indexhome" >
+	
+	
+	
+	
+	</div>
+	<%-- <a href="${basePath }/toNote">toNote</a> --%>
 </body>
 </html>
