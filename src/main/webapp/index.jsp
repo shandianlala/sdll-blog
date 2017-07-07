@@ -14,9 +14,14 @@ var basePath='${basePath}';
 </head>
 <body style="background-image: url(${basePath }/resource/image/72270.jpg); background-size:cover;background-repeat: no-repeat;">
 	<div id="indexhome" >
-	
-	
-	
+		<div class="index">
+			<a href="javascript:void(0)"><h1>闪电拉拉的个人网站</h1></a>
+			<p>shandianlala's personal website</p>
+		</div>
+		<div class="index">
+			
+		</div>
+		<div class="index"></div>
 	
 	</div>
 	<%-- <a href="${basePath }/toNote">toNote</a> --%>
