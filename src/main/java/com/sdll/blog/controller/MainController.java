@@ -19,7 +19,7 @@ public class MainController {
 
 	@RequestMapping(value={"","/"})
 	public ModelAndView toIndex(){
-		ModelAndView view = new ModelAndView("/index");
+		ModelAndView view = new ModelAndView("../../index");
 //		List<Menu> menuList = menuService.listMenu();
 //		InformationTool.getInformation(view, menuList);
 		return view;
