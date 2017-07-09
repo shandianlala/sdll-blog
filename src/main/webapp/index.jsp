@@ -18,12 +18,12 @@ var basePath='${basePath}';
 			<a href="javascript:void(0)"><h1>闪电拉拉的个人网站</h1></a>
 			<p>shandianlala's personal website</p>
 		</div>
-		<div class="index">
+		<div class="index" id="hrborder">
 			<div class="container">
 				<a href="${basePath }/blog"><p><span>» </span>网络日志</p></a>
 			</div>
 		</div>
-		<div class="index">
+		<div class="index" >
 			<div class="contact">
 				<a href="javascript:void(0)"><span >contact me</span></a>
 			</div>

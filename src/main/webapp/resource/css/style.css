@@ -23,6 +23,11 @@ body{
 	margin:5px auto;
 }
 
+#hrborder{
+	border-bottom:1px solid white;
+	border-top:1px solid white;
+}
+
 .index a{
 	text-decoration: none;
 }
