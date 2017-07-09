@@ -25,8 +25,8 @@ public class MainController {
 		return view;
 	}
 
-	@RequestMapping("/toNote")
-	public ModelAndView toNote(){
+	@RequestMapping("/blog")
+	public ModelAndView blog(){
 		ModelAndView view = new ModelAndView("plugins/note");
 		User user = userService.userLogin("sdll");
 		System.out.print("------------------"+user.toString());

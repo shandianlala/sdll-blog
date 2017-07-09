@@ -8,7 +8,7 @@ body{
 #indexhome{
 	width:40%;
 	height:40%;
-	background-color:#c0c0c0;
+	background-color:black;
 	opacity: 0.2;
 	position: absolute;
     left: 30%;
@@ -19,7 +19,7 @@ body{
 .index{
 	width:90%;
 	height:30%;
-	border:1px solid black;
+	/* border:1px solid white; */
 	margin:5px auto;
 }
 
@@ -28,7 +28,7 @@ body{
 }
 
 .index h1{
-	color:#1b0101;
+	color:#ffffff;
 	font-weight:bolder;
 	text-align:center;
 	margin-top:0px;
@@ -36,16 +36,54 @@ body{
 }
 
 .index h1:hover{
-	color:#ffffff;
+	color:#e2e20e;
 }
 
 .index p{
 	margin-top:10px;
 	text-align:center;
-	font-size:14px;
+	font-size:16px;
+	color:white;
+	font-weight:bold;
 }
 
+.container{
+	width:90%;
+	height:50%;
+	/* border:1px solid white; */
+	margin:20px auto;
+	background-color:white;
+	border-radius:8px;
+}
 
+.container:hover{
+	background-color:red;
+}
 
+.container p{
+	color:black;
+	font-size:24px;
+	text-align:left;
+	padding-top:6px;
+	padding-left:20px;
+}
 
+.contact{
+	width:90%;
+	height:50%;
+	/* border:1px solid white;  */
+	margin:20px auto;
+}
 
+.contact span{
+	float:right;
+	font-size:18px;
+	color:white;
+	display:block;
+	font-weight:bold;
+	padding-top:8px;
+}
+
+.contact span:hover{
+	color:red;
+}

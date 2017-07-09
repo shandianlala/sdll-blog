@@ -19,9 +19,15 @@ var basePath='${basePath}';
 			<p>shandianlala's personal website</p>
 		</div>
 		<div class="index">
-			
+			<div class="container">
+				<a href="${basePath }/blog"><p><span>» </span>网络日志</p></a>
+			</div>
 		</div>
-		<div class="index"></div>
+		<div class="index">
+			<div class="contact">
+				<a href="javascript:void(0)"><span >contact me</span></a>
+			</div>
+		</div>
 	
 	</div>
 	<%-- <a href="${basePath }/toNote">toNote</a> --%>
