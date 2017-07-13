@@ -16,22 +16,22 @@
   <select id="queryUserByUserAccount" resultMap="BaseResultMap" parameterType="java.lang.String">
   	select
   	<include refid="Base_Column_List" />
-  	from user
+  	from blog_user
   	where user_account = #{userAccount,jdbcType=VARCHAR} and user_status = '1'
   </select>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from user
+    from blog_user
     where user_id = #{userId,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from user
+    delete from blog_user
     where user_id = #{userId,jdbcType=CHAR}
   </delete>
   <insert id="insert" parameterType="com.sdll.blog.pojo.BlogUser" >
-    insert into user (user_id, user_account, user_name, 
+    insert into blog_user (user_id, user_account, user_name, 
       user_password, user_phone, user_email, 
       user_status)
     values (#{userId,jdbcType=CHAR}, #{userAccount,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
@@ -39,7 +39,7 @@
       #{userStatus,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sdll.blog.pojo.BlogUser" >
-    insert into user
+    insert into blog_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
         user_id,
@@ -88,7 +88,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.sdll.blog.pojo.BlogUser" >
-    update user
+    update blog_user
     <set >
       <if test="userAccount != null" >
         user_account = #{userAccount,jdbcType=VARCHAR},
@@ -112,7 +112,7 @@
     where user_id = #{userId,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.sdll.blog.pojo.BlogUser" >
-    update user
+    update blog_user
     set user_account = #{userAccount,jdbcType=VARCHAR},
       user_name = #{userName,jdbcType=VARCHAR},
       user_password = #{userPassword,jdbcType=VARCHAR},
