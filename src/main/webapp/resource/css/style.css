@@ -11,6 +11,11 @@ input{
 	outline:none
 } 
 
+h2{
+	padding: 0px;
+	margin: 0px;	
+}
+
 #indexhome{
 	width:40%;
 	height:40%;
@@ -103,7 +108,7 @@ input{
 .blog-content{
 	width:80%;
 /* 	height:80%;	 */
-	border:1px solid black;
+	/* border:1px solid black; */
 	margin:0 auto;
 }
 
@@ -147,8 +152,9 @@ input{
 .blog-middle{
 	margin-top:10px;
 	width:100%;
-	border:1px solid blue;
+	/* border:1px solid blue; */
 	float:left;
+	border-bottom:1px solid #d3d3d3;
 }
 
 .middle-left{
@@ -156,15 +162,16 @@ input{
 	width:58%;
 /* 	height:400px; */
 	float:left;
-	border:1px solid black;
+	/* border:1px solid black; */
+	margin-bottom:20px;
 }
 
 .middle-right{
 	margin-right:6%;
 	width:26%;
-	height:400px;
+	/* height:400px; */
 	float:right;
-	border:1px solid red;
+/* 	border:1px solid red; */
 }
 
 .first-title{
@@ -235,6 +242,7 @@ a:hover {
 
 #blog-list li{
 	margin-top:10px;
+	color: #556677;
 }
 
 #blog-list li span{
@@ -243,8 +251,57 @@ a:hover {
 
 #blog-list li a{
    text-decoration: none;
-   color:#111111;
+   color:#556677;
+   font-weight:bold;
 }
+
+.dateAndmessage a{
+	text-decoration: none;
+}
+
+.copyright{
+    font-size: 12px;
+    font-family: microsoft yahei;
+    color: #444;
+    float:right;
+}
+
+.copyright a{
+	text-decoration: none;
+	color: #444;
+}
+
+/* 右侧留言个人信息 */
+.person-msg{
+	width:100%;
+	background-color: #DEEBF7;
+	border-radius:15px;
+	margin-top: 0px;
+}
+
+.person-msg h2{
+	padding-left: 20px;
+	padding-top: 10px;
+	font-size:16px;
+	padding-bottom: 10px;
+	border-bottom:1px solid #d3d3d3;
+}
+
+.person-msg ul{
+	margin-top: 0px;
+	padding-bottom: 10px;
+}
+
+.person-msg ul li{
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+
+
+
+
+
 
 
 

@@ -30,7 +30,7 @@
 					<p class="blog-type">分类：<a  href="javascript:void(0)">算法与数学</a></p>
 					<p class="second-title">眼下最热门的技术，绝对是人工智能。</p>
 					<a class="view-title" href="javascript:void(0)">继续阅读全文 »</a>
-					<p class="dateAndmessage">2017年7月13日 06:33 | 留言（12）</p>
+					<p class="dateAndmessage">2017年7月13日 06:33 | <a href="javascript:void(0)">留言（12）</a></p>
 				</div>
 				<p class="latest-blog">最新文章</p>
 				<div class="latest-blog-title">
@@ -45,12 +45,42 @@
 						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
 						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
 						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
+						<li><a href="javascript:void(0)">更多文章......</a></li>
 					</ul>
 				</div>
 			</div>
 			<!-- 右侧评论 -->
-			<div class="middle-right">middle-right</div>
+			<div class="middle-right">
+				<div class="person-msg">
+					<h2>最新留言</h2>
+					<ul>
+						<li>竹墨轩</li>
+						<li>李四</li>
+						<li>李四</li>
+						<li>李四</li>
+						<li>李四</li>
+						<li>李四</li>
+						<li>李四</li>
+					</ul>
+				</div>
+				<div class="person-msg">
+					<h2>Follow me</h2>
+					<ul>
+						<li>竹墨轩</li>
+						<li>李四</li>
+						<li>李四</li>
+					</ul>
+				</div>
+				<div class="person-msg">
+					<h2>最新留言</h2>
+					<ul>
+						<li>李四</li>
+						<li>李四</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+		<p class="copyright"><a href="javascript:void(0)">联系方式</a> | 版权所有，保留一切权利！  2017闪电拉拉</p>
 	</div>
 </body>
 </html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sdll.blog.dao.BlogLeaveWordsMapper" >
+  <resultMap id="BaseResultMap" type="com.sdll.blog.pojo.BlogLeaveWords" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="msg_status" property="msgStatus" jdbcType="CHAR" />
+    <result column="note_id" property="noteId" jdbcType="CHAR" />
+    <result column="user_id" property="userId" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, comment, create_time, msg_status, note_id, user_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_leave_words
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from blog_leave_words
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sdll.blog.pojo.BlogLeaveWords" >
+    insert into blog_leave_words (id, comment, create_time, 
+      msg_status, note_id, user_id)
+    values (#{id,jdbcType=CHAR}, #{comment,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{msgStatus,jdbcType=CHAR}, #{noteId,jdbcType=CHAR}, #{userId,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sdll.blog.pojo.BlogLeaveWords" >
+    insert into blog_leave_words
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="msgStatus != null" >
+        msg_status,
+      </if>
+      <if test="noteId != null" >
+        note_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="msgStatus != null" >
+        #{msgStatus,jdbcType=CHAR},
+      </if>
+      <if test="noteId != null" >
+        #{noteId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sdll.blog.pojo.BlogLeaveWords" >
+    update blog_leave_words
+    <set >
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="msgStatus != null" >
+        msg_status = #{msgStatus,jdbcType=CHAR},
+      </if>
+      <if test="noteId != null" >
+        note_id = #{noteId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sdll.blog.pojo.BlogLeaveWords" >
+    update blog_leave_words
+    set comment = #{comment,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      msg_status = #{msgStatus,jdbcType=CHAR},
+      note_id = #{noteId,jdbcType=CHAR},
+      user_id = #{userId,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
