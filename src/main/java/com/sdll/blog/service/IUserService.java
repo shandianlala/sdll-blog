@@ -1,6 +1,6 @@
 package com.sdll.blog.service;
 
-import com.sdll.blog.pojo.User;
+import com.sdll.blog.pojo.BlogUser;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IUserService {
 
-     User userLogin(String userAccount);
+     BlogUser userLogin(String userAccount);
 
 //    List<User> listUser();
 

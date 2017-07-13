@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sdll.blog.vo.ExecResult;
-import com.sdll.blog.pojo.User;
+import com.sdll.blog.pojo.BlogUser;
 import com.sdll.blog.service.IUserService;
 
 @Controller
@@ -28,7 +28,7 @@ public class MainController {
 	@RequestMapping("/blog")
 	public ModelAndView blog(){
 		ModelAndView view = new ModelAndView("plugins/note");
-		User user = userService.userLogin("sdll");
+		BlogUser user = userService.userLogin("sdll");
 		System.out.print("------------------"+user.toString());
 		return view;
 	}

@@ -1,6 +1,6 @@
 package com.sdll.blog.pojo;
 
-public class User {
+public class BlogUser {
     private String userId;
 
     private String userAccount;

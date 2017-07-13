@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sdll.blog.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.sdll.blog.pojo.User" >
+<mapper namespace="com.sdll.blog.dao.BlogUserMapper" >
+  <resultMap id="BaseResultMap" type="com.sdll.blog.pojo.BlogUser" >
     <id column="user_id" property="userId" jdbcType="CHAR" />
     <result column="user_account" property="userAccount" jdbcType="VARCHAR" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
@@ -30,7 +30,7 @@
     delete from user
     where user_id = #{userId,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.sdll.blog.pojo.User" >
+  <insert id="insert" parameterType="com.sdll.blog.pojo.BlogUser" >
     insert into user (user_id, user_account, user_name, 
       user_password, user_phone, user_email, 
       user_status)
@@ -38,7 +38,7 @@
       #{userPassword,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
       #{userStatus,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.sdll.blog.pojo.User" >
+  <insert id="insertSelective" parameterType="com.sdll.blog.pojo.BlogUser" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sdll.blog.pojo.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.sdll.blog.pojo.BlogUser" >
     update user
     <set >
       <if test="userAccount != null" >
@@ -111,7 +111,7 @@
     </set>
     where user_id = #{userId,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sdll.blog.pojo.User" >
+  <update id="updateByPrimaryKey" parameterType="com.sdll.blog.pojo.BlogUser" >
     update user
     set user_account = #{userAccount,jdbcType=VARCHAR},
       user_name = #{userName,jdbcType=VARCHAR},

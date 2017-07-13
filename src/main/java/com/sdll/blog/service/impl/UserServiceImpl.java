@@ -1,7 +1,7 @@
 package com.sdll.blog.service.impl;
 
-import com.sdll.blog.dao.UserMapper;
-import com.sdll.blog.pojo.User;
+import com.sdll.blog.dao.BlogUserMapper;
+import com.sdll.blog.pojo.BlogUser;
 import com.sdll.blog.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,11 +18,11 @@ import java.io.Serializable;
 public class UserServiceImpl implements IUserService,Serializable {
 
     @Autowired
-    UserMapper userMapper;
+    BlogUserMapper userMapper;
 
-    public User userLogin(String userAccount) {
+    public BlogUser userLogin(String userAccount) {
         System.out.println("userAccount:"+userAccount);
-        User user = userMapper.queryUserByUserAccount("sdll");
+        BlogUser user = userMapper.queryUserByUserAccount("sdll");
         System.out.println("用户user:"+user.getUserEmail());
         return user;
     }
