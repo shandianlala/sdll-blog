@@ -1,5 +1,6 @@
 package com.sdll.blog.controller;
 
+import com.sdll.blog.service.IBlogNoteService;
 import com.sdll.blog.service.IBlogUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sdll.blog.vo.ExecResult;
+import com.sdll.blog.pojo.BlogNote;
 import com.sdll.blog.pojo.BlogUser;
 import com.sdll.blog.service.IBlogUserService;
 
@@ -15,7 +17,10 @@ import com.sdll.blog.service.IBlogUserService;
 public class MainController {
 
 	@Autowired
-	private IBlogUserService userService;
+	IBlogUserService userService;
+	
+	@Autowired
+	IBlogNoteService blogNoteService;
 
 	@RequestMapping(value={"","/"})
 	public ModelAndView toIndex(){
@@ -28,8 +33,9 @@ public class MainController {
 	@RequestMapping("/blog")
 	public ModelAndView blog() {
 		ModelAndView view = new ModelAndView("plugins/note");
-		BlogUser user = userService.userLogin("sdll");
-		System.out.print("------------------"+user.toString());
+		BlogNote blogNote = blogNoteService.getBlogNoteUpdate();
+		
+		view.addObject("blogNote", blogNote);
 		return view;
 	}
 	

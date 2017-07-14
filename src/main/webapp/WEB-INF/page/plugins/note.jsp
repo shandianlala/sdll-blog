@@ -24,12 +24,12 @@
 		<div class="blog-middle">
 			<!-- 左侧文章列表 -->
 			<div class="middle-left">
-				<a href="javascript:void(0)" class="first-title">middle-left开发</a>
+				<a href="javascript:void(0)" class="first-title">${blogNote.title }</a>
 				<div class="title-div">
 					<p class="blog-type">分类：<a  href="javascript:void(0)">算法与数学</a></p>
-					<p class="second-title">眼下最热门的技术，绝对是人工智能。</p>
+					<p class="second-title">${blogNote.secondTitle }</p>
 					<a class="view-title" href="javascript:void(0)">继续阅读全文 »</a>
-					<p class="dateAndmessage">2017年7月13日 06:33 | <a href="javascript:void(0)">留言（12）</a></p>
+					<p class="dateAndmessage"><fmt:formatDate value="${blogNote.createTime }" type="both" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
 				</div>
 				<p class="latest-blog">最新文章</p>
 				<div class="latest-blog-title">

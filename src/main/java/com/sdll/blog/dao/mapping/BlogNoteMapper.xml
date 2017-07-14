@@ -27,6 +27,16 @@
     from blog_note
     where id = #{id,jdbcType=CHAR}
   </select>
+  <!-- 查询最新的一篇日志 -->
+  <select id="selectByUpdate" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog_note
+    where create_time = (select max(create_time) from blog_note)
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from blog_note
     where id = #{id,jdbcType=CHAR}

@@ -1,6 +1,8 @@
 package com.sdll.blog.service.impl;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +21,17 @@ public class BlogNoteServiceImpl implements IBlogNoteService,Serializable {
 	BlogNoteMapper blogNoteMapper;
 	
 	public int insertBlogNote(BlogNote blogNote) {
-		// TODO Auto-generated method stub
+		if(blogNote.getId() == null || "".equals(blogNote.getId())) {
+			blogNote.setCreateTime(new Timestamp(System.currentTimeMillis()));
+			blogNote.setId(UUID.randomUUID().toString().replace("-", ""));
+		}
+		blogNote.setUpdateTime(new Timestamp(System.currentTimeMillis()));
 		return blogNoteMapper.insert(blogNote);
+	}
+
+	public BlogNote getBlogNoteUpdate() {
+		BlogNote blogNote = blogNoteMapper.selectByUpdate();
+		return blogNote;
 	}
 
 }

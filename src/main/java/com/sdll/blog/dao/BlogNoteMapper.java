@@ -1,5 +1,7 @@
 package com.sdll.blog.dao;
 
+import java.util.Date;
+
 import com.sdll.blog.pojo.BlogNote;
 
 public interface BlogNoteMapper {
@@ -16,4 +18,6 @@ public interface BlogNoteMapper {
     int updateByPrimaryKeyWithBLOBs(BlogNote record);
 
     int updateByPrimaryKey(BlogNote record);
+    
+    BlogNote selectByUpdate();
 }

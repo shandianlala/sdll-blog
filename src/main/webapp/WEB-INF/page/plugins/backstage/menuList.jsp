@@ -173,7 +173,7 @@
 	    </div>
 	    
 		<div id="editor">
-	        <p>欢迎使用 <b>wang</b> 富文本编辑器</p>
+	        <p><b>随心所欲</b>  记录无处不在</p>
 	    </div>
 	    <div class="saveorpublish">
 	    	<button class="layui-btn layui-btn-radius" onclick="addOrEditBlog(1)">保存并发布</button>
@@ -182,10 +182,9 @@
 	</div>
 <script>
 	layui.use('element', function(){
-	  var element = layui.element(); 
-	  
-	  //监听导航点击
-	  element.on('nav(demo)', function(elem){
+	    var element = layui.element(); 
+	    //监听导航点击
+	    element.on('nav(demo)', function(elem){
 		debugger;
 	    console.log(elem)
 	    layer.msg(elem.text());
@@ -203,8 +202,31 @@
     	var secondTitle = $("#secondTitle").val(); 
     	var type = $('#type option:selected') .val();
     	var blogContent = editor.txt.html();
-    	alert(blogContent);
-    	console.log(blogContent);
+    	if(title.length == 0) {
+    		//layer.open({"title":"提示","content":"请填写标题！！！"});
+    		alert("请填写标题！！！");
+    		return;
+    	}
+    	//alert(blogContent);
+    	$.ajax({
+    		url : '${basePath}/ajax/addOrEditBlog',
+    		dataType : 'json',
+    		type : 'post',
+    		data : {
+    			title : title,
+    			secondTitle : secondTitle,
+    			type : type,
+    			blogContent : blogContent
+    		},
+    		success : function(data) {
+    			if(data.success){
+    				alert("保存成功");
+    			}
+    		},
+    		error : function(data) {
+    			alert("访问服务器出错！");
+    		}
+    	});
     	
     }
 </script>
