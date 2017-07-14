@@ -1,6 +1,6 @@
 package com.sdll.blog.controller;
 
-import com.sdll.blog.service.IUserService;
+import com.sdll.blog.service.IBlogUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -9,13 +9,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sdll.blog.vo.ExecResult;
 import com.sdll.blog.pojo.BlogUser;
-import com.sdll.blog.service.IUserService;
+import com.sdll.blog.service.IBlogUserService;
 
 @Controller
 public class MainController {
 
 	@Autowired
-	private IUserService userService;
+	private IBlogUserService userService;
 
 	@RequestMapping(value={"","/"})
 	public ModelAndView toIndex(){
@@ -26,11 +26,23 @@ public class MainController {
 	}
 
 	@RequestMapping("/blog")
-	public ModelAndView blog(){
+	public ModelAndView blog() {
 		ModelAndView view = new ModelAndView("plugins/note");
 		BlogUser user = userService.userLogin("sdll");
 		System.out.print("------------------"+user.toString());
 		return view;
+	}
+	
+	@RequestMapping("/backStage")
+	public ModelAndView backStage() {
+		ModelAndView view = new ModelAndView(getBasePath() + "menuList");
+		
+		
+		return view;
+	}
+	
+	private String getBasePath() {
+		return "plugins/backstage/";
 	}
 
 //

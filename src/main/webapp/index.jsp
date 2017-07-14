@@ -25,6 +25,7 @@ var basePath='${basePath}';
 		</div>
 		<div class="index" >
 			<div class="contact">
+				<a href="${basePath }/backStage"><span >back Stage</span></a>
 				<a href="javascript:void(0)"><span >contact me</span></a>
 			</div>
 		</div>

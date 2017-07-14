@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/5/6.
  */
-public interface IUserService {
+public interface IBlogUserService {
 
      BlogUser userLogin(String userAccount);
 

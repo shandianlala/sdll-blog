@@ -2,7 +2,7 @@ package com.sdll.blog.service.impl;
 
 import com.sdll.blog.dao.BlogUserMapper;
 import com.sdll.blog.pojo.BlogUser;
-import com.sdll.blog.service.IUserService;
+import com.sdll.blog.service.IBlogUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 @Service
 @Transactional
-public class UserServiceImpl implements IUserService,Serializable {
+public class BlogUserServiceImpl implements IBlogUserService,Serializable {
 
     @Autowired
     BlogUserMapper userMapper;

@@ -255,6 +255,10 @@ a:hover {
    font-weight:bold;
 }
 
+#blog-list li a:hover{
+   color:black;
+}
+
 .dateAndmessage a{
 	text-decoration: none;
 }
@@ -297,6 +301,18 @@ a:hover {
 	padding-top: 10px;
 }
 
+/* headandleft样式设计 */
+.blog-menu{
+	width:80%;
+	margin:0 auto;
+	/* border:1px solid black; */
+}
+
+.saveorpublish{
+	width:17%;
+	/* border:1px solid black; */
+	margin:10px auto;
+}
 
 
 

@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%-- <%@taglib uri="/com.eshore.InitDataTag" prefix="i"%> --%>
 <c:set var="basePath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
