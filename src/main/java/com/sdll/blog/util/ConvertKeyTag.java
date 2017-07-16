@@ -51,8 +51,7 @@ public class ConvertKeyTag extends BodyTagSupport {
         IDictionaryService dictionaryService = (IDictionaryService) SpringContextHelper
             .getBean("dictionaryService");
 
-        //String returnValue = dictionaryService.getDictnameByGroupAndValue(dataType, keyValue);
-        String returnValue = "dd";
+        String returnValue = dictionaryService.getDictnameByGroupAndValue(dataType, keyValue);
         try {
             out.write(returnValue);
         } catch (IOException e) {

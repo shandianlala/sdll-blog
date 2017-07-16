@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sdll.blog.dao.DictionaryMapper;
 import com.sdll.blog.pojo.Dictionary;
 import com.sdll.blog.service.IDictionaryService;
+import com.sdll.blog.util.StringUtil;
 
 @Service("dictionaryService")
 @Transactional
@@ -23,8 +24,10 @@ public class DictionaryServiceImpl implements IDictionaryService {
 	}
 
 	public String getDictnameByGroupAndValue(String dictGroup, String dictValue) {
+		if(StringUtil.isEmpty(dictGroup) || StringUtil.isEmpty(dictValue)) {
+			return "";
+		}
 		String dictName = dictionaryMapper.selectDictnameByGroupAndValue(dictGroup, dictValue);
-		System.out.println("dictName===========" + dictName);
 		return dictName;
 	}
 
