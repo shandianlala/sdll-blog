@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sdll.blog.dao.DictionaryMapper" >
+  <resultMap id="BaseResultMap" type="com.sdll.blog.pojo.Dictionary" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="dict_group" property="dictGroup" jdbcType="CHAR" />
+    <result column="dict_name" property="dictName" jdbcType="VARCHAR" />
+    <result column="dict_value" property="dictValue" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="seq" property="seq" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, dict_group, dict_name, dict_value, description, seq, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_param
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <!-- 根据dictGroup和dictValue查询出dictName -->
+  <select id="selectDictnameByGroupAndValue" resultType="java.lang.String" >
+    select dict_name
+    from blog_param
+    where dict_group = #{dictGroup,jdbcType=CHAR} and dict_value = #{dictValue,jdbcType=CHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from blog_param
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sdll.blog.pojo.Dictionary" >
+    insert into blog_param (id, dict_group, dict_name, 
+      dict_value, description, seq, 
+      create_time, update_time)
+    values (#{id,jdbcType=CHAR}, #{dictGroup,jdbcType=CHAR}, #{dictName,jdbcType=VARCHAR}, 
+      #{dictValue,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{seq,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sdll.blog.pojo.Dictionary" >
+    insert into blog_param
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="dictGroup != null" >
+        dict_group,
+      </if>
+      <if test="dictName != null" >
+        dict_name,
+      </if>
+      <if test="dictValue != null" >
+        dict_value,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="seq != null" >
+        seq,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="dictGroup != null" >
+        #{dictGroup,jdbcType=CHAR},
+      </if>
+      <if test="dictName != null" >
+        #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictValue != null" >
+        #{dictValue,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null" >
+        #{seq,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sdll.blog.pojo.Dictionary" >
+    update blog_param
+    <set >
+      <if test="dictGroup != null" >
+        dict_group = #{dictGroup,jdbcType=CHAR},
+      </if>
+      <if test="dictName != null" >
+        dict_name = #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictValue != null" >
+        dict_value = #{dictValue,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null" >
+        seq = #{seq,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sdll.blog.pojo.Dictionary" >
+    update blog_param
+    set dict_group = #{dictGroup,jdbcType=CHAR},
+      dict_name = #{dictName,jdbcType=VARCHAR},
+      dict_value = #{dictValue,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      seq = #{seq,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

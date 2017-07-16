@@ -1,7 +1,5 @@
 package com.sdll.blog.dao;
 
-import java.util.Date;
-
 import com.sdll.blog.pojo.BlogNote;
 
 public interface BlogNoteMapper {
@@ -18,6 +16,9 @@ public interface BlogNoteMapper {
     int updateByPrimaryKeyWithBLOBs(BlogNote record);
 
     int updateByPrimaryKey(BlogNote record);
-    
+    /**
+     * 获取最近的一篇日志
+     * @return
+     */
     BlogNote selectByUpdate();
 }

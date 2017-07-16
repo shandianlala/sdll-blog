@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="convertKeyTag" prefix="convertKeyTag" %>
 <c:set var="basePath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
@@ -26,7 +27,7 @@
 			<div class="middle-left">
 				<a href="javascript:void(0)" class="first-title">${blogNote.title }</a>
 				<div class="title-div">
-					<p class="blog-type">分类：<a  href="javascript:void(0)">算法与数学</a></p>
+					<p class="blog-type">分类：<a  href="javascript:void(0)">算法与数学<convertKeyTag:data dataType="blog_type" keyValue="1"></convertKeyTag:data></a></p>
 					<p class="second-title">${blogNote.secondTitle }</p>
 					<a class="view-title" href="javascript:void(0)">继续阅读全文 »</a>
 					<p class="dateAndmessage"><fmt:formatDate value="${blogNote.createTime }" type="both" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>

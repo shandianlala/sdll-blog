@@ -2,16 +2,13 @@ package com.sdll.blog.controller;
 
 import com.sdll.blog.service.IBlogNoteService;
 import com.sdll.blog.service.IBlogUserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sdll.blog.vo.ExecResult;
 import com.sdll.blog.pojo.BlogNote;
-import com.sdll.blog.pojo.BlogUser;
-import com.sdll.blog.service.IBlogUserService;
 
 @Controller
 public class MainController {
@@ -34,7 +31,6 @@ public class MainController {
 	public ModelAndView blog() {
 		ModelAndView view = new ModelAndView("plugins/note");
 		BlogNote blogNote = blogNoteService.getBlogNoteUpdate();
-		
 		view.addObject("blogNote", blogNote);
 		return view;
 	}
