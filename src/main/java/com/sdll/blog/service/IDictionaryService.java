@@ -9,15 +9,16 @@ import com.sdll.blog.pojo.Dictionary;
 public interface IDictionaryService {
 	
 	/**
-	 * 根据字典分组查询
-	 * @return
-	 */
-	public List<Dictionary> getDictGroup(String code);
+     * 通过dictGroup查询这一类型的所有数据
+     * @param dictGroup
+     * @return
+     */
+	List<Dictionary> listDictionaryByDictgroup(String dictGroup);
 	
 	/**
 	 * 根据KYE查询Value
 	 */
-	public String getDictnameByGroupAndValue(String dictGroup, String dictValue);
+	String getDictnameByGroupAndValue(String dictGroup, String dictValue);
 	
  
 	
@@ -26,6 +27,6 @@ public interface IDictionaryService {
 	 * @param dictName
 	 * @return
 	 */
-	public Dictionary getDictByName(String dictName);
+	Dictionary getDictByName(String dictName);
 
 }

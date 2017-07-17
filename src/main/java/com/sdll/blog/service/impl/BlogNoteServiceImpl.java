@@ -2,6 +2,7 @@ package com.sdll.blog.service.impl;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,11 @@ public class BlogNoteServiceImpl implements IBlogNoteService,Serializable {
 	public BlogNote getBlogNoteUpdate() {
 		BlogNote blogNote = blogNoteMapper.selectByUpdate();
 		return blogNote;
+	}
+
+	public List<BlogNote> listBlogNote() {
+		// TODO Auto-generated method stub
+		return blogNoteMapper.listBlogNote();
 	}
 
 }

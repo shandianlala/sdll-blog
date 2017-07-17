@@ -162,12 +162,9 @@
 	      <div class="layui-input-inline">
 	        <select name="modules"  id="type">
 	          <option value="">直接选择</option>
-	          <option value="1">java</option>
-	          <option value="2">计算机科学</option>
-	          <option value="3">观点与感想</option>
-	          <option value="4">操作系统</option>
-	          <option value="5">Javascript</option>
-	          <option value="6">Hibernate</option>
+	          <c:forEach items="${dictionaryList }" var="dic">
+		          <option value="${dic.dictValue }">${dic.dictName }</option>
+	          </c:forEach>
 	        </select>
 	      </div>
 	    </div>

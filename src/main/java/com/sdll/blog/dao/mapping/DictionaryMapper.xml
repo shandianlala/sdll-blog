@@ -26,6 +26,13 @@
     from blog_param
     where dict_group = #{dictGroup,jdbcType=CHAR} and dict_value = #{dictValue,jdbcType=CHAR}
   </select>
+  <!-- 通过dictGroup查询这一类型的所有数据 -->
+  <select id="listDictionaryByDictgroup" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_param
+    where dict_group = #{dictGroup,jdbcType=CHAR}
+  </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from blog_param

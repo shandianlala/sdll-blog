@@ -1,5 +1,7 @@
 package com.sdll.blog.service;
 
+import java.util.List;
+
 import com.sdll.blog.pojo.BlogNote;
 
 public interface IBlogNoteService {
@@ -11,5 +13,11 @@ public interface IBlogNoteService {
 	 * @return
 	 */
 	BlogNote getBlogNoteUpdate();
+	
+	/**
+	 * 获取最新的10条博客记录
+	 * @return
+	 */
+	List<BlogNote> listBlogNote();
 
 }

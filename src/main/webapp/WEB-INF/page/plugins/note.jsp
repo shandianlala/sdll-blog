@@ -35,16 +35,9 @@
 				<p class="latest-blog">最新文章</p>
 				<div class="latest-blog-title">
 					<ul id="blog-list">
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
-						<li><span>2017年06月29日</span> » <a href="javascript:void(0)">45岁以后的人生</a></li>
+						<c:forEach items="${blogNoteList }" var="blog">
+							<li><span><fmt:formatDate value="${blog.createTime }" pattern="yyyy年MM月dd日"/></span> » <a href="javascript:void(0)">${blog.title }</a></li>
+						</c:forEach>
 						<li><a href="javascript:void(0)">更多文章......</a></li>
 					</ul>
 				</div>

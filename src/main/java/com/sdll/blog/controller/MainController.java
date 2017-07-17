@@ -2,6 +2,9 @@ package com.sdll.blog.controller;
 
 import com.sdll.blog.service.IBlogNoteService;
 import com.sdll.blog.service.IBlogUserService;
+import com.sdll.blog.service.IDictionaryService;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sdll.blog.pojo.BlogNote;
+import com.sdll.blog.pojo.Dictionary;
 
 @Controller
 public class MainController {
 
 	@Autowired
 	IBlogUserService userService;
+	
+	@Autowired
+	IDictionaryService dictionaryService;
 	
 	@Autowired
 	IBlogNoteService blogNoteService;
@@ -31,6 +38,8 @@ public class MainController {
 	public ModelAndView blog() {
 		ModelAndView view = new ModelAndView("plugins/note");
 		BlogNote blogNote = blogNoteService.getBlogNoteUpdate();
+		List<BlogNote> blogNoteList = blogNoteService.listBlogNote();
+		view.addObject("blogNoteList", blogNoteList);
 		view.addObject("blogNote", blogNote);
 		return view;
 	}
@@ -38,8 +47,8 @@ public class MainController {
 	@RequestMapping("/backStage")
 	public ModelAndView backStage() {
 		ModelAndView view = new ModelAndView(getBasePath() + "menuList");
-		
-		
+		List<Dictionary> dictionaryList = dictionaryService.listDictionaryByDictgroup("blog_type");
+		view.addObject("dictionaryList", dictionaryList);
 		return view;
 	}
 	

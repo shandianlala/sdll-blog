@@ -18,9 +18,12 @@ public class DictionaryServiceImpl implements IDictionaryService {
 	@Autowired
 	DictionaryMapper dictionaryMapper;
 	
-	public List<Dictionary> getDictGroup(String code) {
-		
-		return null;
+	public List<Dictionary> listDictionaryByDictgroup(String dictGroup) {
+		if(StringUtil.isEmpty(dictGroup)) {
+			return null;
+		}
+		List<Dictionary> list = dictionaryMapper.listDictionaryByDictgroup(dictGroup);
+		return list;
 	}
 
 	public String getDictnameByGroupAndValue(String dictGroup, String dictValue) {

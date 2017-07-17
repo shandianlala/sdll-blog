@@ -36,6 +36,13 @@
     from blog_note
     where create_time = (select max(create_time) from blog_note)
   </select>
+  <!-- 获取最新的10条博客记录 -->
+  <select id="listBlogNote" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_note
+    where create_time != (select max(create_time) from blog_note) order by create_time desc limit 10
+  </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from blog_note

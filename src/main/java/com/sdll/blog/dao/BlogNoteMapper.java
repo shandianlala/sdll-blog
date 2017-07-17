@@ -1,5 +1,7 @@
 package com.sdll.blog.dao;
 
+import java.util.List;
+
 import com.sdll.blog.pojo.BlogNote;
 
 public interface BlogNoteMapper {
@@ -21,4 +23,10 @@ public interface BlogNoteMapper {
      * @return
      */
     BlogNote selectByUpdate();
+    
+    /**
+	 * 获取最新的10条博客记录
+	 * @return
+	 */
+	List<BlogNote> listBlogNote();
 }
