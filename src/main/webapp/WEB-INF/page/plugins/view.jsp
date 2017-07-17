@@ -7,7 +7,7 @@
 <c:set var="basePath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>闪电拉拉的网络日志</title>
+    <title>${blogNote.title }</title>
 	<link href="${basePath }/resource/css/style.css" rel="stylesheet">
     <script type="text/javascript">
     
