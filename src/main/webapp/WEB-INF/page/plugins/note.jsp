@@ -25,18 +25,18 @@
 		<div class="blog-middle">
 			<!-- 左侧文章列表 -->
 			<div class="middle-left">
-				<a href="javascript:void(0)" class="first-title">${blogNote.title }</a>
+				<a href="${basePath }/blog/view?id=${blogNote.id}" class="first-title">${blogNote.title }</a>
 				<div class="title-div">
 					<p class="blog-type">分类：<a  href="javascript:void(0)"><convertKeyTag:data dataType="blog_type" keyValue="${blogNote.type }"></convertKeyTag:data></a></p>
 					<p class="second-title">${blogNote.secondTitle }</p>
-					<a class="view-title" href="javascript:void(0)">继续阅读全文 »</a>
+					<a class="view-title" href="${basePath }/blog/view?id=${blogNote.id}">继续阅读全文 »</a>
 					<p class="dateAndmessage"><fmt:formatDate value="${blogNote.createTime }" type="both" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
 				</div>
 				<p class="latest-blog">最新文章</p>
 				<div class="latest-blog-title">
 					<ul id="blog-list">
 						<c:forEach items="${blogNoteList }" var="blog">
-							<li><span><fmt:formatDate value="${blog.createTime }" pattern="yyyy年MM月dd日"/></span> » <a href="javascript:void(0)">${blog.title }</a></li>
+							<li><span><fmt:formatDate value="${blog.createTime }" pattern="yyyy年MM月dd日"/></span> » <a href="${basePath }/blog/view?id=${blog.id}">${blog.title }</a></li>
 						</c:forEach>
 						<li><a href="javascript:void(0)">更多文章......</a></li>
 					</ul>

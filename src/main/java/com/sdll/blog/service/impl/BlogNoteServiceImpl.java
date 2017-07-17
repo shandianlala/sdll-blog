@@ -40,4 +40,9 @@ public class BlogNoteServiceImpl implements IBlogNoteService,Serializable {
 		return blogNoteMapper.listBlogNote();
 	}
 
+	public BlogNote getByPrimaryKey(String id) {
+		// TODO Auto-generated method stub
+		return blogNoteMapper.selectByPrimaryKey(id);
+	}
+
 }

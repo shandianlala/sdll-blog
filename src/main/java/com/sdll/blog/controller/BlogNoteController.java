@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sdll.blog.pojo.BlogNote;
 import com.sdll.blog.service.IBlogNoteService;
@@ -96,6 +97,13 @@ public class BlogNoteController {
 	}
 	
 	
+	@RequestMapping("/blog/view")
+	public ModelAndView view(String id) {
+		ModelAndView view = new ModelAndView("plugins/view");
+		BlogNote blogNote = blogNoteService.getByPrimaryKey(id);
+		view.addObject("blogNote", blogNote);
+		return view;
+	}
 	
 
 }

@@ -314,11 +314,32 @@ a:hover {
 	margin:10px auto;
 }
 
+/* 日志预览 */
+.middle-left-view{
+	margin-left:10%;
+	margin-right:10%;
+	width:80%;
+/* 	height:400px; 
+	float:left;  */
+	/* border:1px solid black; */
+	margin-bottom:20px;
+}
 
+.person-msg h2 a{
+	color: #a9af52;
+}
 
+.title-div-content{
+	/* height:144px; */
+	width:100%;
+	border-top:1px solid #d3d3d3;
+	border-bottom:1px solid #d3d3d3;
+	margin-top:10px;
+}
 
-
-
+.view-blogContent{
+	margin-top: 80px;
+}
 
 
 

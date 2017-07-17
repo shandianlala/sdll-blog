@@ -10,7 +10,12 @@ public interface BlogNoteMapper {
     int insert(BlogNote record);
 
     int insertSelective(BlogNote record);
-
+    
+    /**
+	 * 同过id查询网络日志的内容
+	 * @param id 日志id
+	 * @return
+	 */
     BlogNote selectByPrimaryKey(String id);
 
     int updateByPrimaryKeySelective(BlogNote record);

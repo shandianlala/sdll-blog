@@ -19,5 +19,12 @@ public interface IBlogNoteService {
 	 * @return
 	 */
 	List<BlogNote> listBlogNote();
+	
+	/**
+	 * 同过id查询网络日志的内容
+	 * @param id 日志id
+	 * @return
+	 */
+	BlogNote getByPrimaryKey(String id);
 
 }
