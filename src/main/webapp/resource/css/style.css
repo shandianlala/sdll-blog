@@ -341,7 +341,14 @@ a:hover {
 	margin-top: 80px;
 }
 
+pre{
+	background-color:#DEEBF7;
+    border-radius: 3px;
+}
 
+code{
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
 
 
 
