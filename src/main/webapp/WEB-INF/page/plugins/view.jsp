@@ -30,11 +30,22 @@
 				<div class="person-msg">
 					<h2 style="color:orange">分类：<a href="javascript:void(0)" ><convertKeyTag:data dataType="blog_type" keyValue="${blogNote.type }"></convertKeyTag:data></a></h2>
 					<ul>
-						<li>上一篇   » 对对对</li>
-						<li>下一篇   » </li>
+						<c:if test="${not empty upBlogNote.id}">
+							<li>上一篇   » <a href="${basePath }/blog/view?id=${upBlogNote.id}">${upBlogNote.title }</a></li>
+						</c:if>
+						<c:if test="${not empty downBlogNote.id}">
+							<li>下一篇   » <a href="${basePath }/blog/view?id=${downBlogNote.id}">${downBlogNote.title }</a></li>
+						</c:if>
 					</ul>
 				</div>
 				<a href="javascript:void(0)" class="first-title">${blogNote.title }</a>
+				<div class="icon_pic">
+					<a href="javascript:void(0)"><i class="fa fa-eye fa-lg"></i><span> ${blogNote.blogEye }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-star fa-lg"></i><span> ${blogNote.blogStar }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-thumbs-o-up fa-lg"></i><span> ${blogNote.blogThumbs }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-comment fa-lg"></i><span> ${blogNote.blogComment }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-download fa-lg"></i><span> ${blogNote.blogDownload }</span> </a>
+				</div>
 				<div class="title-div-content">
 					<p class="dateAndmessage"><b>日期：</b><fmt:formatDate value="${blogNote.createTime }" type="both" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
 					<div class="view-blogContent">
@@ -42,14 +53,7 @@
 						${blogNote.blogContent }
 					</div>
 				</div>
-				<div class="icon_pic">
-					<a href="javascript:void(0)"><i class="fa fa-eye fa-lg"></i><span> ${blogNote.blogEye }</span> </a>
-					<a href="javascript:void(0)"><i class="fa fa-star fa-lg"></i><span> ${blogNote.blogStar }</span> </a>
-					<a href="javascript:void(0)"><i class="fa fa-thumbs-o-up fa-lg"></i><span> ${blogNote.blogThumbs }</span> </a>
-					<a href="javascript:void(0)"><i class="fa fa-comment fa-lg"></i><span> ${blogNote.blogComment }</span> </a>
-					<a href="javascript:void(0)"><i class="fa fa-download fa-lg"></i><span> ${blogNote.blogDownload }</span> </a>
-					
-				</div>
+				
 			</div>
 		</div>
 		<p class="copyright"><a href="javascript:void(0)">联系方式</a> | 版权所有，保留一切权利！  2017闪电拉拉</p>

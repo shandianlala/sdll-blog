@@ -3,6 +3,7 @@ package com.sdll.blog.controller;
 import com.sdll.blog.service.IBlogNoteService;
 import com.sdll.blog.service.IBlogUserService;
 import com.sdll.blog.service.IDictionaryService;
+import com.sdll.blog.util.DateUtils;
 
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class MainController {
 	@RequestMapping("/blog")
 	public ModelAndView blog() {
 		ModelAndView view = new ModelAndView("plugins/note");
-		BlogNote blogNote = blogNoteService.getBlogNoteUpdate();
+		BlogNote blogNote = blogNoteService.getBlogNote("0", DateUtils.getCurrentDateTime());
 		List<BlogNote> blogNoteList = blogNoteService.listBlogNote();
 		view.addObject("blogNoteList", blogNoteList);
 		view.addObject("blogNote", blogNote);

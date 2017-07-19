@@ -48,6 +48,34 @@
     from blog_note
     where create_time != (select max(create_time) from blog_note) order by create_time desc limit 10
   </select>
+  <!-- 获取上一篇，下一篇日志 -->
+  <select id="selectByUpOrDownBlogNote" resultMap="ResultMapWithBLOBs"  >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog_note
+    where  
+    <choose>
+    	<when test="operate == 1">
+    		<![CDATA[ create_time > ]]> #{createTime,jdbcType=TIMESTAMP}  
+    	</when>
+    	<when test="operate == 0">
+    		<![CDATA[ create_time < ]]> #{createTime,jdbcType=TIMESTAMP} 
+    	</when>
+    	<otherwise></otherwise>
+    </choose>
+    ORDER BY create_time  
+    <choose>
+    	<when test="operate == 1">
+    		ASC	 
+    	</when>
+    	<otherwise>
+    		DESC
+    	</otherwise>
+    </choose>
+    LIMIT 1
+  </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from blog_note

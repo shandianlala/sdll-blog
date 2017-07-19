@@ -223,7 +223,15 @@ a:hover {
     color: #3d3d3d;
     font-size:10px;
     float:right;
-    padding-top:14px;
+    /* padding-top:14px; */
+}
+
+.dateAndmessage a{
+    color: #556677;
+}
+
+.dateAndmessage a:hover{
+    color: #a9af52;
 }
 
 .latest-blog{
@@ -338,7 +346,7 @@ a:hover {
 }
 
 .view-blogContent{
-	margin-top: 80px;
+	/* margin-top: 80px; */
 }
 
 pre{
@@ -351,12 +359,18 @@ code{
 }
 
 .icon_pic{
-	margin-top:5px;
+    margin-top: 10px;
+    float: right;
 }
 
 .icon_pic a{
 	text-decoration: none;
 	margin-left: 20px;
+	color:#556677;
+}
+
+.icon_pic a:hover{
+	color:#a9af52;
 }
 
 

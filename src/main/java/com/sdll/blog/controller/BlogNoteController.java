@@ -101,9 +101,13 @@ public class BlogNoteController {
 	public ModelAndView view(String id) {
 		ModelAndView view = new ModelAndView("plugins/view");
 		BlogNote blogNote = blogNoteService.getByPrimaryKey(id);
+		BlogNote upBlogNote = blogNoteService.getBlogNote("1", blogNote.getCreateTime());
+		BlogNote downBlogNote = blogNoteService.getBlogNote("0", blogNote.getCreateTime());
 		blogNote.setBlogEye(blogNote.getBlogEye() + 1);
 		blogNoteService.updateByPrimaryKey(blogNote);
 		view.addObject("blogNote", blogNote);
+		view.addObject("upBlogNote", upBlogNote);
+		view.addObject("downBlogNote", downBlogNote);
 		return view;
 	}
 	

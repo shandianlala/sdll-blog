@@ -2,6 +2,7 @@ package com.sdll.blog.service.impl;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sdll.blog.dao.BlogNoteMapper;
 import com.sdll.blog.pojo.BlogNote;
 import com.sdll.blog.service.IBlogNoteService;
+import com.sdll.blog.util.DateUtils;
 @Service
 @Transactional
 public class BlogNoteServiceImpl implements IBlogNoteService,Serializable {
@@ -30,8 +32,8 @@ public class BlogNoteServiceImpl implements IBlogNoteService,Serializable {
 		return blogNoteMapper.insert(blogNote);
 	}
 
-	public BlogNote getBlogNoteUpdate() {
-		BlogNote blogNote = blogNoteMapper.selectByUpdate();
+	public BlogNote getBlogNote(String operate, Date createTime) {
+		BlogNote blogNote = blogNoteMapper.selectByUpOrDownBlogNote(operate, createTime);
 		return blogNote;
 	}
 
