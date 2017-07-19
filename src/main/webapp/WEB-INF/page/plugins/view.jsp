@@ -9,6 +9,8 @@
 <head>
     <title>${blogNote.title }</title>
 	<link href="${basePath }/resource/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="${basePath }/resource/css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="${basePath }/resource/image/favicon.ico" type="image/x-icon">
     <script type="text/javascript">
     
     </script>
@@ -39,6 +41,14 @@
 						<p class="second-title">${blogNote.secondTitle }</p>
 						${blogNote.blogContent }
 					</div>
+				</div>
+				<div class="icon_pic">
+					<a href="javascript:void(0)"><i class="fa fa-eye fa-lg"></i><span> ${blogNote.blogEye }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-star fa-lg"></i><span> ${blogNote.blogStar }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-thumbs-o-up fa-lg"></i><span> ${blogNote.blogThumbs }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-comment fa-lg"></i><span> ${blogNote.blogComment }</span> </a>
+					<a href="javascript:void(0)"><i class="fa fa-download fa-lg"></i><span> ${blogNote.blogDownload }</span> </a>
+					
 				</div>
 			</div>
 		</div>

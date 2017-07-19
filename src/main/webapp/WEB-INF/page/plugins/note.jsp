@@ -9,6 +9,7 @@
 <head>
     <title>闪电拉拉的网络日志</title>
 	<link href="${basePath }/resource/css/style.css" rel="stylesheet">
+	<link rel="icon" href="${basePath }/resource/image/favicon.ico" type="image/x-icon">
     <script type="text/javascript">
     
     </script>

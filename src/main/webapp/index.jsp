@@ -10,6 +10,7 @@ var basePath='${basePath}';
 <html>
 <head>
 	<title>闪电拉拉的个人网站</title>
+	<link rel="icon" href="${basePath }/resource/image/favicon.ico" type="image/x-icon">
 	<link href="${basePath }/resource/css/style.css" rel="stylesheet">
 </head>
 <body style="background-image: url(${basePath }/resource/image/72270.jpg); background-size:cover;background-repeat: no-repeat;">

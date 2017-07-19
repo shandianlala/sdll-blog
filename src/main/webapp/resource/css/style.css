@@ -350,7 +350,14 @@ code{
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
+.icon_pic{
+	margin-top:5px;
+}
 
+.icon_pic a{
+	text-decoration: none;
+	margin-left: 20px;
+}
 
 
 

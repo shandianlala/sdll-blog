@@ -17,7 +17,9 @@ import java.io.Serializable;
 @Transactional
 public class BlogUserServiceImpl implements IBlogUserService,Serializable {
 
-    @Autowired
+	private static final long serialVersionUID = 1L;
+	
+	@Autowired
     BlogUserMapper userMapper;
 
     public BlogUser userLogin(String userAccount) {

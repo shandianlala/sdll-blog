@@ -45,4 +45,9 @@ public class BlogNoteServiceImpl implements IBlogNoteService,Serializable {
 		return blogNoteMapper.selectByPrimaryKey(id);
 	}
 
+	public int updateByPrimaryKey(BlogNote record) {
+		int result = blogNoteMapper.updateByPrimaryKey(record);
+		return result;
+	}
+
 }

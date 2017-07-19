@@ -26,5 +26,12 @@ public interface IBlogNoteService {
 	 * @return
 	 */
 	BlogNote getByPrimaryKey(String id);
+	
+	/**
+	 * 通过主键更新blogNote
+	 * @param record
+	 * @return
+	 */
+	int updateByPrimaryKey(BlogNote record);
 
 }

@@ -18,6 +18,16 @@ public class BlogNote {
     private String type;
 
     private String blogContent;
+    
+    private int blogEye;//浏览次数
+    
+    private int blogStar;//收藏次数
+    
+    private int blogThumbs;//点赞次数
+    
+    private int blogDownload;//下载次数
+    
+    private int blogComment;//评论次数
 
     public String getId() {
         return id;
@@ -82,4 +92,44 @@ public class BlogNote {
     public void setBlogContent(String blogContent) {
         this.blogContent = blogContent == null ? null : blogContent.trim();
     }
+
+	public int getBlogEye() {
+		return blogEye;
+	}
+
+	public void setBlogEye(int blogEye) {
+		this.blogEye = blogEye;
+	}
+
+	public int getBlogStar() {
+		return blogStar;
+	}
+
+	public void setBlogStar(int blogStar) {
+		this.blogStar = blogStar;
+	}
+
+	public int getBlogThumbs() {
+		return blogThumbs;
+	}
+
+	public void setBlogThumbs(int blogThumbs) {
+		this.blogThumbs = blogThumbs;
+	}
+
+	public int getBlogDownload() {
+		return blogDownload;
+	}
+
+	public void setBlogDownload(int blogDownload) {
+		this.blogDownload = blogDownload;
+	}
+
+	public int getBlogComment() {
+		return blogComment;
+	}
+
+	public void setBlogComment(int blogComment) {
+		this.blogComment = blogComment;
+	}
 }

@@ -9,12 +9,17 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="type" property="type" jdbcType="CHAR" />
+    <result column="blog_eye" property="blogEye" jdbcType="INTEGER" />
+    <result column="blog_star" property="blogStar" jdbcType="INTEGER" />
+    <result column="blog_thumbs" property="blogThumbs" jdbcType="INTEGER" />
+    <result column="blog_download" property="blogDownload" jdbcType="INTEGER" />
+    <result column="blog_comment" property="blogComment" jdbcType="INTEGER" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.sdll.blog.pojo.BlogNote" extends="BaseResultMap" >
     <result column="blog_content" property="blogContent" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, title, second_title, status, create_time, update_time, type
+    id, title, second_title, status, create_time, update_time, type, blog_eye, blog_star, blog_thumbs, blog_download, blog_comment 
   </sql>
   <sql id="Blob_Column_List" >
     blog_content
@@ -51,10 +56,14 @@
   <insert id="insert" parameterType="com.sdll.blog.pojo.BlogNote" >
     insert into blog_note (id, title, second_title, 
       status, create_time, update_time, 
-      type, blog_content)
+      type, blog_eye, blog_star, 
+      blog_thumbs, blog_download, blog_comment, 
+      blog_content)
     values (#{id,jdbcType=CHAR}, #{title,jdbcType=VARCHAR}, #{secondTitle,jdbcType=VARCHAR}, 
       #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{type,jdbcType=CHAR}, #{blogContent,jdbcType=LONGVARCHAR})
+      #{type,jdbcType=CHAR}, #{blogEye,jdbcType=INTEGER}, #{blogStar,jdbcType=INTEGER}, 
+      #{blogThumbs,jdbcType=INTEGER}, #{blogDownload,jdbcType=INTEGER}, #{blogComment,jdbcType=INTEGER}, 
+      #{blogContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sdll.blog.pojo.BlogNote" >
     insert into blog_note
@@ -79,6 +88,21 @@
       </if>
       <if test="type != null" >
         type,
+      </if>
+      <if test="blogEye != null" >
+        blog_eye,
+      </if>
+      <if test="blogStar != null" >
+        blog_star,
+      </if>
+      <if test="blogThumbs != null" >
+        blog_thumbs,
+      </if>
+      <if test="blogDownload != null" >
+        blog_download,
+      </if>
+      <if test="blogComment != null" >
+        blog_comment,
       </if>
       <if test="blogContent != null" >
         blog_content,
@@ -106,6 +130,21 @@
       <if test="type != null" >
         #{type,jdbcType=CHAR},
       </if>
+      <if test="blogEye != null" >
+        #{blogEye,jdbcType=INTEGER},
+      </if>
+      <if test="blogStar != null" >
+        #{blogStar,jdbcType=INTEGER},
+      </if>
+      <if test="blogThumbs != null" >
+        #{blogThumbs,jdbcType=INTEGER},
+      </if>
+      <if test="blogDownload != null" >
+        #{blogDownload,jdbcType=INTEGER},
+      </if>
+      <if test="blogComment != null" >
+        #{blogComment,jdbcType=INTEGER},
+      </if>
       <if test="blogContent != null" >
         #{blogContent,jdbcType=LONGVARCHAR},
       </if>
@@ -132,6 +171,21 @@
       <if test="type != null" >
         type = #{type,jdbcType=CHAR},
       </if>
+      <if test="blogEye != null" >
+        blog_eye = #{blogEye,jdbcType=INTEGER},
+      </if>
+      <if test="blogStar != null" >
+        blog_star = #{blogStar,jdbcType=INTEGER},
+      </if>
+      <if test="blogThumbs != null" >
+        blog_thumbs = #{blogThumbs,jdbcType=INTEGER},
+      </if>
+      <if test="blogDownload != null" >
+        blog_download = #{blogDownload,jdbcType=INTEGER},
+      </if>
+      <if test="blogComment != null" >
+        blog_comment = #{blogComment,jdbcType=INTEGER},
+      </if>
       <if test="blogContent != null" >
         blog_content = #{blogContent,jdbcType=LONGVARCHAR},
       </if>
@@ -146,6 +200,11 @@
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       type = #{type,jdbcType=CHAR},
+      blog_eye = #{blogEye,jdbcType=INTEGER},
+      blog_star = #{blogStar,jdbcType=INTEGER},
+      blog_thumbs = #{blogThumbs,jdbcType=INTEGER},
+      blog_download = #{blogDownload,jdbcType=INTEGER},
+      blog_comment = #{blogComment,jdbcType=INTEGER},
       blog_content = #{blogContent,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=CHAR}
   </update>
@@ -156,7 +215,12 @@
       status = #{status,jdbcType=CHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      type = #{type,jdbcType=CHAR}
+      type = #{type,jdbcType=CHAR},
+      blog_eye = #{blogEye,jdbcType=INTEGER},
+      blog_star = #{blogStar,jdbcType=INTEGER},
+      blog_thumbs = #{blogThumbs,jdbcType=INTEGER},
+      blog_download = #{blogDownload,jdbcType=INTEGER},
+      blog_comment = #{blogComment,jdbcType=INTEGER}
     where id = #{id,jdbcType=CHAR}
   </update>
 </mapper>

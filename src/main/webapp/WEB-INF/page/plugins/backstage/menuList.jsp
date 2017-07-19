@@ -12,6 +12,7 @@
 <title>我的网络日志</title>
 <link href="${basePath }/resource/css/style.css" rel="stylesheet">
 <link href="${basePath }/resource/layui/css/layui.css" rel="stylesheet">
+<link rel="icon" href="${basePath }/resource/image/favicon.ico" type="image/x-icon">
 <script type="text/javascript" src="${basePath }/resource/layui/layui.js"></script>
 <script type="text/javascript" src="${basePath }/resource/js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="${basePath }/resource/js/wangEditor.min.js"></script>
