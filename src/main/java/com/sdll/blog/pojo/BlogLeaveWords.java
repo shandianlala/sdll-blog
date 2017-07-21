@@ -14,6 +14,8 @@ public class BlogLeaveWords {
     private String noteId;
 
     private String userId;
+    
+    private String userEmail;
 
     public String getId() {
         return id;
@@ -62,4 +64,12 @@ public class BlogLeaveWords {
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
     }
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
 }

@@ -373,9 +373,22 @@ code{
 	color:#a9af52;
 }
 
+/* 评论样式 */
+.title-div-content-leaveword{
+	/* height:144px; */
+	width:100%;
+	/* border-top:1px solid #d3d3d3; */
+	border-bottom:1px solid #d3d3d3;
+	margin-top:3px;
+}
 
+.title-div-content-leaveword p{
+	margin-left:40px;
+}
 
-
+.title-div-content-leaveword i{
+	
+}
 
 
 

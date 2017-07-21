@@ -8,9 +8,10 @@
     <result column="msg_status" property="msgStatus" jdbcType="CHAR" />
     <result column="note_id" property="noteId" jdbcType="CHAR" />
     <result column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="user_email" property="userEmail" jdbcType="CHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, comment, create_time, msg_status, note_id, user_id
+    id, comment, create_time, msg_status, note_id, user_id, user_email
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -24,9 +25,9 @@
   </delete>
   <insert id="insert" parameterType="com.sdll.blog.pojo.BlogLeaveWords" >
     insert into blog_leave_words (id, comment, create_time, 
-      msg_status, note_id, user_id)
+      msg_status, note_id, user_id, user_email)
     values (#{id,jdbcType=CHAR}, #{comment,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{msgStatus,jdbcType=CHAR}, #{noteId,jdbcType=CHAR}, #{userId,jdbcType=CHAR})
+      #{msgStatus,jdbcType=CHAR}, #{noteId,jdbcType=CHAR}, #{userId,jdbcType=CHAR}, #{userEmail,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sdll.blog.pojo.BlogLeaveWords" >
     insert into blog_leave_words
@@ -49,6 +50,9 @@
       <if test="userId != null" >
         user_id,
       </if>
+      <if test="userEmail != null" >
+        user_email,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -68,6 +72,9 @@
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null" >
+        #{userEmail,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -89,6 +96,9 @@
       <if test="userId != null" >
         user_id = #{userId,jdbcType=CHAR},
       </if>
+      <if test="userId != null" >
+        user_email = #{userEmail,jdbcType=CHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
@@ -99,6 +109,7 @@
       msg_status = #{msgStatus,jdbcType=CHAR},
       note_id = #{noteId,jdbcType=CHAR},
       user_id = #{userId,jdbcType=CHAR}
+      user_email = #{userEmail,jdbcType=CHAR}
     where id = #{id,jdbcType=CHAR}
   </update>
 </mapper>
