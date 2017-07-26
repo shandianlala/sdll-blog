@@ -67,27 +67,8 @@
 					</div>
 				</div>
 				<!-- 评论框 -->
-				<div class="title-div-content-leaveword">
-						<i><h3>YOUR MESSAGE：</h2></i>
-						
-						<label>
-							<span>Your Name :</span>
-							<input id="name" type="text" name="name" placeholder="Your Full Name" />
-						</label><br>
-						<label>
-							<span>Your Email :</span>
-							<input id="email" type="email" name="email" placeholder="Valid Email Address" />
-						</label><br>
-						<label>
-							<span>Message :</span>
-							<textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
-						</label>
-						<label>
-						<span>&nbsp;</span>
-						<input type="button" class="button" value="Send" />
-						</label>
-					
-				</div>
+									
+				<!-- 评论框 -->
 			</div>
 		</div>
 		<p class="copyright"><a href="javascript:void(0)">联系方式</a> | 版权所有，保留一切权利！  2017闪电拉拉</p>

@@ -16,6 +16,7 @@
 <script type="text/javascript" src="${basePath }/resource/layui/layui.js"></script>
 <script type="text/javascript" src="${basePath }/resource/js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="${basePath }/resource/js/wangEditor.min.js"></script>
+<script src="${basePath }/resource/layui/lay/modules/layer.js"></script>
 </head>
 <body>
 	<div class="blog-menu">
@@ -172,6 +173,7 @@
 	    
 		<div id="editor">
 	        <p><b>随心所欲</b>  记录无处不在</p>
+	        <p><b>随心所欲</b>  记录无处不在发送到发送到<img src="/../upload/Save-Rock-And-Roll.jpg" style="max-width: 100%;"></p><p><br></p>
 	    </div>
 	    <div class="saveorpublish">
 	    	<button class="layui-btn layui-btn-radius" onclick="addOrEditBlog(1)">保存并发布</button>
@@ -192,7 +194,6 @@
 	var E = window.wangEditor;
     var editor = new E('#editor')
     editor.customConfig.uploadImgServer = '${basePath }/ajax/upLoad';
-    // 或者 var editor = new E( document.getElementById('#editor') )
     editor.create();
     
     function addOrEditBlog(oper) {
@@ -201,7 +202,6 @@
     	var type = $('#type option:selected') .val();
     	var blogContent = editor.txt.html();
     	if(title.length == 0) {
-    		//layer.open({"title":"提示","content":"请填写标题！！！"});
     		alert("请填写标题！！！");
     		return;
     	}
