@@ -1,7 +1,5 @@
 package com.sdll.blog.util;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class StringUtil {
 	
 	// Empty checks
@@ -10,11 +8,11 @@ public class StringUtil {
      * <p>Checks if a CharSequence is empty ("") or null.</p>
      *
      * <pre>
-     * StringUtils.isEmpty(null)      = true
-     * StringUtils.isEmpty("")        = true
-     * StringUtils.isEmpty(" ")       = false
-     * StringUtils.isEmpty("bob")     = false
-     * StringUtils.isEmpty("  bob  ") = false
+     * StringUtil.isEmpty(null)      = true
+     * StringUtil.isEmpty("")        = true
+     * StringUtil.isEmpty(" ")       = false
+     * StringUtil.isEmpty("bob")     = false
+     * StringUtil.isEmpty("  bob  ") = false
      * </pre>
      *
      * <p>NOTE: This method changed in Lang version 2.0.
@@ -33,11 +31,11 @@ public class StringUtil {
      * <p>Checks if a CharSequence is not empty ("") and not null.</p>
      *
      * <pre>
-     * StringUtils.isNotEmpty(null)      = false
-     * StringUtils.isNotEmpty("")        = false
-     * StringUtils.isNotEmpty(" ")       = true
-     * StringUtils.isNotEmpty("bob")     = true
-     * StringUtils.isNotEmpty("  bob  ") = true
+     * StringUtil.isNotEmpty(null)      = false
+     * StringUtil.isNotEmpty("")        = false
+     * StringUtil.isNotEmpty(" ")       = true
+     * StringUtil.isNotEmpty("bob")     = true
+     * StringUtil.isNotEmpty("  bob  ") = true
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
@@ -45,18 +43,18 @@ public class StringUtil {
      * @since 3.0 Changed signature from isNotEmpty(String) to isNotEmpty(CharSequence)
      */
     public static boolean isNotEmpty(final CharSequence cs) {
-        return !StringUtils.isEmpty(cs);
+        return !StringUtil.isEmpty(cs);
     }
 	
     /**
      * <p>Checks if a CharSequence is whitespace, empty ("") or null.</p>
      *
      * <pre>
-     * StringUtils.isBlank(null)      = true
-     * StringUtils.isBlank("")        = true
-     * StringUtils.isBlank(" ")       = true
-     * StringUtils.isBlank("bob")     = false
-     * StringUtils.isBlank("  bob  ") = false
+     * StringUtil.isBlank(null)      = true
+     * StringUtil.isBlank("")        = true
+     * StringUtil.isBlank(" ")       = true
+     * StringUtil.isBlank("bob")     = false
+     * StringUtil.isBlank("  bob  ") = false
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
@@ -81,11 +79,11 @@ public class StringUtil {
      * <p>Checks if a CharSequence is not empty (""), not null and not whitespace only.</p>
      *
      * <pre>
-     * StringUtils.isNotBlank(null)      = false
-     * StringUtils.isNotBlank("")        = false
-     * StringUtils.isNotBlank(" ")       = false
-     * StringUtils.isNotBlank("bob")     = true
-     * StringUtils.isNotBlank("  bob  ") = true
+     * StringUtil.isNotBlank(null)      = false
+     * StringUtil.isNotBlank("")        = false
+     * StringUtil.isNotBlank(" ")       = false
+     * StringUtil.isNotBlank("bob")     = true
+     * StringUtil.isNotBlank("  bob  ") = true
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
@@ -95,7 +93,7 @@ public class StringUtil {
      * @since 3.0 Changed signature from isNotBlank(String) to isNotBlank(CharSequence)
      */
     public static boolean isNotBlank(final CharSequence cs) {
-        return !StringUtils.isBlank(cs);
+        return !StringUtil.isBlank(cs);
     }
 	
 
