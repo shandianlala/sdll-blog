@@ -47,7 +47,7 @@
 					<a href="javascript:void(0)"><i class="fa fa-download fa-lg"></i><span> ${blogNote.blogDownload }</span> </a>
 				</div>
 				<div class="title-div-content">
-					<p class="dateAndmessage"><b>日期：</b><fmt:formatDate value="${blogNote.createTime }" type="both" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
+					<p class="dateAndmessage"><b>日期：</b><fmt:formatDate value="${blogNote.createTime }" pattern="yyyy年MM月dd日 HH:mm" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
 					<div class="view-blogContent">
 						<p class="second-title">${blogNote.secondTitle }</p>
 						${blogNote.blogContent }

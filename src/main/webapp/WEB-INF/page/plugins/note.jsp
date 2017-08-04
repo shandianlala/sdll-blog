@@ -31,7 +31,7 @@
 					<p class="blog-type">分类：<a  href="javascript:void(0)"><convertKeyTag:data dataType="blog_type" keyValue="${blogNote.type }"></convertKeyTag:data></a></p>
 					<p class="second-title">${blogNote.secondTitle }</p>
 					<a class="view-title" href="${basePath }/blog/view?id=${blogNote.id}">继续阅读全文 »</a>
-					<p class="dateAndmessage"><fmt:formatDate value="${blogNote.createTime }" type="both" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
+					<p class="dateAndmessage"><fmt:formatDate value="${blogNote.createTime }" pattern="yyyy年MM月dd日 HH:mm" dateStyle="full" /> | <a href="javascript:void(0)">留言（12）</a></p>
 				</div>
 				<p class="latest-blog">最新文章</p>
 				<div class="latest-blog-title">
