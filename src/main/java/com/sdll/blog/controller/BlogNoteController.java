@@ -99,7 +99,7 @@ public class BlogNoteController {
 	
 	@RequestMapping("/blog/view")
 	public ModelAndView view(String id) {
-		ModelAndView view = new ModelAndView("plugins/view");
+		ModelAndView view = new ModelAndView("plugins/blog/view");
 		BlogNote blogNote = blogNoteService.getByPrimaryKey(id);
 		BlogNote upBlogNote = blogNoteService.getBlogNote("1", blogNote.getCreateTime());
 		BlogNote downBlogNote = blogNoteService.getBlogNote("0", blogNote.getCreateTime());

@@ -27,9 +27,9 @@ public class MainController {
 	@Autowired
 	IBlogNoteService blogNoteService;
 
-	@RequestMapping(value={"","/"})
+	@RequestMapping("/main/toHome")
 	public ModelAndView toIndex(){
-		ModelAndView view = new ModelAndView("../../index");
+		ModelAndView view = new ModelAndView("plugins/home/home");
 //		List<Menu> menuList = menuService.listMenu();
 //		InformationTool.getInformation(view, menuList);
 		return view;
@@ -37,7 +37,7 @@ public class MainController {
 
 	@RequestMapping("/blog")
 	public ModelAndView blog() {
-		ModelAndView view = new ModelAndView("plugins/note");
+		ModelAndView view = new ModelAndView("plugins/blog/list");
 		BlogNote blogNote = blogNoteService.getBlogNote("0", DateUtils.getCurrentDateTime());
 		List<BlogNote> blogNoteList = blogNoteService.listBlogNote();
 		view.addObject("blogNoteList", blogNoteList);
