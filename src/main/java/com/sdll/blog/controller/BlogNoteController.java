@@ -31,6 +31,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sdll.blog.util.RichHtmlHandler;
 import com.sdll.blog.pojo.BlogNote;
 import com.sdll.blog.service.IBlogNoteService;
 import com.sdll.blog.util.DateUtils;
@@ -197,10 +198,14 @@ public class BlogNoteController {
 		Template t = getTemplate();
 		if(t != null){
 	        Map<String,Object> dataMap=new HashMap<String,Object>();
-			dataMap.put("blogNote", blogNote);
 			dataMap.put("createTime", DateUtils.getDateToStringByPattern(blogNote.getCreateTime(), "YYYY年MM月dd hh:mm"));
-	        dataMap.put("imagesBase64String", handledBase64Block);
+			RichHtmlHandler handler = new RichHtmlHandler(blogNote.getBlogContent(), appRootPath + File.separator);
+			blogNote.setBlogContent(handler.getHandledDocBodyBlock());
+			handledBase64Block += handler.getData(handler.getDocBase64BlockResults());
+			xmlimaHref += handler.getData(handler.getXmlImgRefs());
+			dataMap.put("imagesBase64String", handledBase64Block);
 	        dataMap.put("imagesXmlHrefString", xmlimaHref);
+	        dataMap.put("blogNote", blogNote);
 	        Writer wb = null;
 			try {
 				wb = new BufferedWriter(new OutputStreamWriter(out,"UTF-8"));

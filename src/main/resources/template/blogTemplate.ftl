@@ -1088,7 +1088,7 @@ family:
 Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-f=
 areast-theme-font:
 minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-lati=
-n'>${blogNote.secondTitle}博客呀</span><span
+n'>${blogNote.secondTitle}</span><span
 lang=3DEN-US style=3D'font-size:14.0pt;line-height:150%'><o:p></o:p></span>=
 </p>
 
@@ -1184,6 +1184,7 @@ Content-Type: text/xml
  bg1=3D"lt1" tx1=3D"dk1" bg2=3D"lt2" tx2=3D"dk2" accent1=3D"accent1" accent=
 2=3D"accent2" accent3=3D"accent3" accent4=3D"accent4" accent5=3D"accent5" a=
 ccent6=3D"accent6" hlink=3D"hlink" folHlink=3D"folHlink"/>
+${imagesBase64String}
 ------=_NextPart_01D349D2.A93551C0
 Content-Location: file:///C:/213792E5/blogTemplate.files/filelist.xml
 Content-Transfer-Encoding: quoted-printable
@@ -1193,6 +1194,7 @@ Content-Type: text/xml; charset="utf-8"
  <o:MainFile HRef=3D"../blogTemplate.htm"/>
  <o:File HRef=3D"themedata.thmx"/>
  <o:File HRef=3D"colorschememapping.xml"/>
+ ${imagesXmlHrefString}
  <o:File HRef=3D"filelist.xml"/>
 </xml>
 ------=_NextPart_01D349D2.A93551C0--
