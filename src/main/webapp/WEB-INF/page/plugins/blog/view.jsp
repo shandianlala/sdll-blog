@@ -14,6 +14,8 @@
     <script type="text/javascript">
     	var basePath = '${basePath}/';
     </script>
+    <script type="text/javascript" src="${basePath }/resource/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="${basePath }/resource/js/blog.js"></script>
 </head>
 <body >
 	<div class="blog-content">
@@ -40,7 +42,8 @@
 				</div>
 				<a href="javascript:void(0)" class="first-title">${blogNote.title }</a>
 				<div class="icon_pic">
-					<a href="javascript:void(0)"><i class="fa fa-eye fa-lg"></i><span> ${blogNote.blogEye }</span> </a>
+					<input type="hidden" id="blogNoteId" value="${blogNote.id}">
+					<a href="javascript:void(0)" ><i class="fa fa-eye fa-lg"></i><span> ${blogNote.blogEye }</span> </a>
 					<a href="javascript:void(0)"><i class="fa fa-star fa-lg"></i><span> ${blogNote.blogStar }</span> </a>
 					<a href="javascript:void(0)"><i class="fa fa-thumbs-o-up fa-lg"></i><span> ${blogNote.blogThumbs }</span> </a>
 					<a href="javascript:void(0)"><i class="fa fa-comment fa-lg"></i><span> ${blogNote.blogComment }</span> </a>

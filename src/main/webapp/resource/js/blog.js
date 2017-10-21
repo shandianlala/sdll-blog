@@ -1,4 +1,15 @@
 //downloadFile(this, '')
+$(function() {
+	//给下载按钮动态绑定事件
+	$(".fa-download").parent().click(function() {
+		var blogNoteId = $("#blogNoteId").val();
+		if(blogNoteId != '') {
+			downloadBlog(this, blogNoteId);
+		}
+	});
+	
+});
+
 /**
  * 下载博客文章内容
  * @param obj 被点击的<a>标签
@@ -30,7 +41,7 @@ function downloadBlog(obj, id){
 		id = paperId.toString();
 		var url = basePath + "/tat/tatexampaper/ajax/downloadPaper?paperIds="+id;
 	} else {
-		var url = basePath + "/tat/tatexampaper/ajax/downloadPaper?paperIds="+id;
+		var url = basePath + "blog/ajax/downloadBlog?blogIds="+id;
 	}
 	$(obj).attr("href",url);
 }
