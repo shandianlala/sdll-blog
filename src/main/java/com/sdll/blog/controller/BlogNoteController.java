@@ -91,13 +91,13 @@ public class BlogNoteController {
                     //取得当前上传文件的文件名称  
                     String myFileName = file.getOriginalFilename();  
                     //如果名称不为“”,说明该文件存在，否则说明该文件不存在  
-                    if(myFileName.trim() !=""){  
-                        System.out.println(myFileName);  
+                    if(myFileName.trim() != "") {  
+                        //System.out.println(myFileName);  
                         //重命名上传后的文件名  
                         String fileName = "/../upload/" + file.getOriginalFilename();  
                         //定义上传路径  
-                        String appRootPath = request.getSession().getServletContext().getRealPath("") + File.separator;
-                        String path =  appRootPath + fileName;  
+                        String appRoot = request.getSession().getServletContext().getRealPath("") + File.separator;
+                        String path =  appRoot + fileName;  
                         File localFile = new File(path);
                         if(!localFile.exists()) {
                         	localFile.mkdirs();
@@ -137,7 +137,6 @@ public class BlogNoteController {
 	
 	@RequestMapping("/blog/ajax/downloadBlog")
 	public void downloadBlog(String blogIds, HttpServletResponse response, HttpServletRequest request) throws IOException {
-		System.out.println("下载博客啦");
 		String[] blogIdArr = blogIds.split(",");
 		appRootPath = request.getSession().getServletContext().getRealPath("/");  //寻找试题图片的时候需要这个
 		if (blogIdArr != null && blogIdArr.length == 1) {
@@ -169,7 +168,7 @@ public class BlogNoteController {
 				blogNote = blogNoteService.getByPrimaryKey(id);
 				// 设置response参数，可以打开下载页面
 				String fileName = blogNote.getTitle() + "_" + DateUtils.getDateToStringByPattern(new Date(), "yyyyMMddHHmmss");
-				out.putNextEntry(new ZipEntry(fileName+".doc"));
+				out.putNextEntry(new ZipEntry(fileName + ".doc"));
 				ByteArrayOutputStream os = new ByteArrayOutputStream();
 				downloadSingleBlog(os, blogNote, response);
 				// 写文件
@@ -189,16 +188,16 @@ public class BlogNoteController {
 	 * 下载单篇或多篇博客文章提取的公共方法
 	 * @createUser shandianlala
 	 * @createDate 2017年10月20日
-	 * @param out
-	 * @param paper
-	 * @param response
+	 * @param out 输出流
+	 * @param blogNote 博客文章
+	 * @param response http响应
 	 * @throws IOException
 	 */
 	private void downloadSingleBlog(OutputStream out,  BlogNote blogNote, HttpServletResponse response) throws IOException{
-		Template t = getTemplate();
-		if(t != null){
-	        Map<String,Object> dataMap=new HashMap<String,Object>();
-			dataMap.put("createTime", DateUtils.getDateToStringByPattern(blogNote.getCreateTime(), "YYYY年MM月dd hh:mm"));
+		Template template = getTemplate();
+		if(template != null) {
+	        Map<String, Object> dataMap = new HashMap<String, Object>();
+			dataMap.put("createTime", DateUtils.getDateToStringByPattern(blogNote.getCreateTime(), "YYYY年MM月dd日  hh:mm"));
 			RichHtmlHandler handler = new RichHtmlHandler(blogNote.getBlogContent(), appRootPath + File.separator);
 			blogNote.setBlogContent(handler.getHandledDocBodyBlock());
 			handledBase64Block += handler.getData(handler.getDocBase64BlockResults());
@@ -208,9 +207,8 @@ public class BlogNoteController {
 	        dataMap.put("blogNote", blogNote);
 	        Writer wb = null;
 			try {
-				wb = new BufferedWriter(new OutputStreamWriter(out,"UTF-8"));
-				t.process(dataMap, wb);//写数据到模板
-				//System.out.println("下载试卷结束啦！");
+				wb = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
+				template.process(dataMap, wb);//写数据到模板
 				wb.close();
 			} catch (FileNotFoundException e1) {
 				e1.printStackTrace();
@@ -222,22 +220,22 @@ public class BlogNoteController {
 	}
 	
 	/**
-	 * 获取博客文章下载模板
+	 * 获取博客文章下载模板 .ftl文件
 	 * @createUser shandianlala
 	 * @createDate 2017年10月20日
 	 * @return
 	 */
 	public Template getTemplate() {
 		//设置模本装置方法和路径,FreeMarker支持多种模板装载方法。可以重servlet，classpath，数据库装载，
-		//这里我们的模板是放在resources 目录下面
+		//这里我们的模板是放在resources/template 目录下面
 		Configuration configuration = new Configuration();
 		configuration.setDefaultEncoding("UTF-8");
 		configuration.setClassForTemplateLoading(this.getClass(), "/");
-		Template t=null;
+		Template template = null;
 		try {
-			//test.ftl为要装载的模板
-			t = configuration.getTemplate("template/blogTemplate.ftl","UTF-8");
-			return t;
+			//blogTemplate.ftl为要装载的模板
+			template = configuration.getTemplate("template/blogTemplate.ftl", "UTF-8");
+			return template;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
