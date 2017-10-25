@@ -56,7 +56,7 @@ public class RichHtmlHandler {
 	
 	/**
 	 * 获取被被转化的富文本内容
-	 * @createUser lenovo
+	 * @createUser shandianlala
 	 * @createDate 2017年10月21日
 	 * @return
 	 */
@@ -137,14 +137,22 @@ public class RichHtmlHandler {
 	}
 	
 	/**
-	 * @Description: 获得已经处理过的HTML文件
-	 * @param @return
+	 *  获得已经处理过的HTML文件
+	 * @param isWebApplication
 	 * @return String
 	 * @throws IOException 
 	 * @throws
 	 */
 	public void handledHtml(boolean isWebApplication)
 			throws IOException {
+		Elements tables = doc.getElementsByTag("table");
+		for (Element element : tables) {
+			element.attr("style", "border: 1px solid #ccc;border-left: 1px solid #ccc;");
+			Elements th = element.select("th");
+			th.attr("style", "border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; padding: 3px 5px;");
+			Elements td = element.select("td");
+			td.attr("style", "border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; padding: 3px 5px;text-align: center;");
+		}
 		Elements imags = doc.getElementsByTag("img");
 //		System.out.println("doc:\n"+doc);
 		if (imags == null || imags.size() == 0) {

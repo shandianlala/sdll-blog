@@ -136,16 +136,16 @@ public class WordImageConvertor {
 		return sb1.toString();
 	}
 	
-	/**   
-	* @Description: 生成图片的base4块  
-	* @param @param nextPartId
-	* @param @param contextLoacation
-	* @param @param ContentType
-	* @param @param base64Content
-	* @param @return    
-	* @return String    
-	* @throws
-	*/ 
+	/**
+	 * 生成图片的base4块  
+	 * @createUser shandianlala程细望
+	 * @createDate 2017年10月25日
+	 * @param nextPartId
+	 * @param contextLoacation
+	 * @param fileTypeName
+	 * @param base64Content
+	 * @return
+	 */
 	public static String generateImageBase64Block(String nextPartId,String contextLoacation,
 									String fileTypeName,String base64Content){
 		/*--=_NextPart_01D188DB.E436D870
@@ -236,7 +236,13 @@ public class WordImageConvertor {
 		return result;
 	}
 	
-	
+	/**
+	 * 获取图片后缀名，如jpg,png等
+	 * @createUser shandianlala
+	 * @createDate 2017年10月25日
+	 * @param srcRealPath 图片绝对路径
+	 * @return
+	 */
 	public static String getFileSuffix(String srcRealPath){
 		int lastIndex = srcRealPath.lastIndexOf(".");
 		String suffix = srcRealPath.substring(lastIndex + 1);
