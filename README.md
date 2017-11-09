@@ -1,5 +1,5 @@
-# sdll-blog
-博客
+# sdll-blog    
+基于SpringMVC + Spring + Mybatis 框架，Maven管理项目
 
 博客首页
 ![](https://github.com/shandianlala/sdll-blog/blob/master/src/main/webapp/resource/image/index.png)
