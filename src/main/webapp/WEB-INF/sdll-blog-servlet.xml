@@ -42,7 +42,7 @@
 	
 	<!-- 视图解析器  bean的ID和 DispatcherServlet中的名称一致 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix"  value="/WEB-INF/page/"/>
+		<property name="prefix"  value="/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
