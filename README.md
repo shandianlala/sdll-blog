@@ -9,3 +9,6 @@
 
 日志详情
 ![](https://github.com/shandianlala/sdll-blog/blob/master/src/main/webapp/resource/image/view.png)
+
+博客文章下载word功能
+![](https://github.com/shandianlala/sdll-blog/blob/master/src/main/webapp/resource/image/downLoadBlog.png)
