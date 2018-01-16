@@ -23,8 +23,8 @@ public class RichHtmlHandler {
 	private Document doc = null;
 	private String html;
 
-	private String docSrcParent = "blogTemplate.files";     //在paper.ftl文件里面找到，检索“Content-Location”
-	private String docSrcLocationPrex = "file:///C:/213792E5";   //在paper.ftl文件里面找到，检索“Content-Location”
+	private String docSrcParent = "blogTemplate.files";     //在 template.ftl 文件里面找到，检索 “Content-Location”
+	private String docSrcLocationPrex = "file:///C:/213792E5";   //在 template.ftl 文件里面找到，检索 “Content-Location”
 	private String nextPartId = "01D349D2.A93551C0";     //在paper.ftl文件里面找到，最末行
 	private String shapeidPrex = "_x56fe__x7247__x0020";
 	private String spidPrex = "_x0000_i";
@@ -145,6 +145,7 @@ public class RichHtmlHandler {
 	 */
 	public void handledHtml(boolean isWebApplication)
 			throws IOException {
+		//给html中的table边框加上默认颜色
 		Elements tables = doc.getElementsByTag("table");
 		for (Element element : tables) {
 			element.attr("style", "border: 1px solid #ccc;border-left: 1px solid #ccc;");
@@ -154,7 +155,6 @@ public class RichHtmlHandler {
 			td.attr("style", "border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; padding: 3px 5px;text-align: center;");
 		}
 		Elements imags = doc.getElementsByTag("img");
-//		System.out.println("doc:\n"+doc);
 		if (imags == null || imags.size() == 0) {
 			// 返回编码后字符串
 			return;
@@ -162,7 +162,6 @@ public class RichHtmlHandler {
 		}
 
 		// 转换成word mht 能识别图片标签内容，去替换html中的图片标签
-
 		for (Element item : imags) {
 			// 把文件取出来
 			String src = item.attr("src");

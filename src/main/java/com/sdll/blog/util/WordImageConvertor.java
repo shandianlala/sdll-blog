@@ -28,10 +28,9 @@ public class WordImageConvertor {
 	/**   
 	* @Description: 将图片转换成base64编码的字符串  
 	* @param @param imageSrc 文件路径
-	* @param @return    
-	* @return String   
-	 * @throws IOException 
-	 * @throws
+	* @return String
+	* @throws IOException
+	* @throws
 	*/ 
 	public static String imageToBase64(String imageSrc) throws IOException{
 		//判断文件是否存在
@@ -42,34 +41,14 @@ public class WordImageConvertor {
 		StringBuilder pictureBuffer = new StringBuilder();
 		FileInputStream input=new FileInputStream(file);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        
 		//读取文件
-		
-		//BufferedInputStream bi=new BufferedInputStream(in);
-        Base64 base64=new Base64();
 		BASE64Encoder encoder=new BASE64Encoder();
 		byte[] temp = new byte[1024];
         for(int len = input.read(temp); len != -1;len = input.read(temp)){
             out.write(temp, 0, len);
-            //out(pictureBuffer.toString());
-            //out.reset();
         }
-        pictureBuffer.append(new String( base64.encodeBase64Chunked(out.toByteArray())));
-        //pictureBuffer.append(encoder.encodeBuffer(out.toByteArray()));
-        
-        
-		/*byte[] data=new byte[input.available()];
-        input.read(data);
-        pictureBuffer.append(base64.encodeBase64String (data));*/
-        
+        pictureBuffer.append(new String( Base64.encodeBase64Chunked(out.toByteArray())));
         input.close();
-        /*BASE64Decoder decoder=new BASE64Decoder();
-		FileOutputStream write = new FileOutputStream(new File("c:\\test2.jpg"));
-        //byte[] decoderBytes = decoder.decodeBuffer (pictureBuffer.toString());
-		byte[] decoderBytes = base64.decodeBase64(pictureBuffer.toString());
-        write.write(decoderBytes);
-        write.close();*/
-		
 		return pictureBuffer.toString();
 	}
 	
@@ -246,7 +225,6 @@ public class WordImageConvertor {
 	public static String getFileSuffix(String srcRealPath){
 		int lastIndex = srcRealPath.lastIndexOf(".");
 		String suffix = srcRealPath.substring(lastIndex + 1);
-//		String suffix = srcRealPath.substring(srcRealPath.indexOf(".")+1);
 		return suffix;
 	}
 	

@@ -82,11 +82,11 @@
       <artifactId>mybatis-spring</artifactId>
       <version>1.2.4</version>
     </dependency>
-      <dependency>
+      <!--<dependency>
           <groupId>org.mybatis.spring.boot</groupId>
           <artifactId>mybatis-spring-boot-starter</artifactId>
           <version>1.1.1</version>
-      </dependency>
+      </dependency>-->
     <!--mysql-->
     <dependency>
       <groupId>mysql</groupId>
