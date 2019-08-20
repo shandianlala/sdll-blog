@@ -2,3 +2,11 @@
 *.css linguist-language = Java
 *.html linguist-language = Java
 /target/
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
